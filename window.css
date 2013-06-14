@@ -1,0 +1,84 @@
+::-webkit-scrollbar { 
+        display: none; 
+}
+@-webkit-keyframes waiting {
+    0%   { opacity: .2; }
+    50%  { opacity: .5; }
+    100% { opacity: .2; }
+}
+
+.waiting {
+    -webkit-animation: waiting 1s linear infinite;
+}
+html {
+    overflow-y: scroll;
+}
+body {
+    margin: 0 auto;
+    background-color: #eee;
+}
+img {
+    max-width: 160px;
+    max-height: 72px;
+    border-radius: 3px;
+}
+p {
+    padding: 12px;
+    color: slategrey;
+}
+video {
+    max-width: 300px;
+    max-height: 212px;
+}
+.box {
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-orient: vertical;
+    box-shadow: 0 1px 4px #ddd;
+    background: white;
+    border-radius: 3px;
+    margin: 4px 0 0 4px;
+    float: left;
+    width: 194px;
+    height: 106px;
+}
+.box:hover{ 
+    cursor: pointer;
+}
+.audio {
+    width: 392px;
+}
+.video {
+    width: 392px;
+    height: 212px;
+}
+.dragover {
+    height: 380px !important;
+    background-position: 50% 7% !important; 
+    opacity: .9 !important;
+    width: 380px !important;
+    left: 10px !important;
+    bottom: 10px !important;
+    border-radius: 50% !important;
+    background-image: none !important;
+    box-shadow: inset 0 0px 10px #DDD !important;
+}
+.uploadBar {
+    background-image: url(arrow.svg);
+    position: fixed;
+    bottom: 0px;
+    height: 50px;
+    width: 100px;
+    left: 150px;
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    background-color: #fff;
+    -webkit-transition: all .2s;
+    -webkit-transform: rotate(180deg);
+    background-size: 28px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    box-shadow: 0 1px 10px #DDD;
+    cursor: pointer;
+}

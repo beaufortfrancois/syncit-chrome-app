@@ -1,0 +1,17 @@
+{
+  "name": "SyncIt",
+  "description": "Sync your files instantly",
+  "version": "1.1",
+  "manifest_version": 2,
+  "icons": {
+      "16": "16.png",
+      "128": "128.png"
+
+  },
+  "permissions": [ "fileSystem", "fileSystem.write", "syncFileSystem" ],
+  "app": {
+     "background": {
+       "scripts": [ "main.js" ]
+     }
+  }
+}
