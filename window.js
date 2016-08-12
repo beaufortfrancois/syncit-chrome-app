@@ -42,7 +42,7 @@ function addFile(fileType, dataUrl, filePath) {
 
     switch (fileType.substr(0, fileType.indexOf('/'))) {
         case 'image':
-            var element = document.createElement('image');
+            var element = document.createElement('img');
             element.src = dataUrl;
             div.classList.add('image');
             break;
