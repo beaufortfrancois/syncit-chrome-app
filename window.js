@@ -18,8 +18,9 @@ onload = function() {
         });
     });
     chrome.syncFileSystem.onFileStatusChanged.addListener(function(info) {
-        if (info.action === 'updated')
+        if (info.action === 'added') {
             show(info.fileEntry);
+        }
     });
 }
 
@@ -76,6 +77,9 @@ function save(event) {
         fileSystem.root.getFile(path, { create: false }, function(fileEntry) {
             chrome.fileSystem.chooseEntry({ type: 'saveFile', 'suggestedName': path },
                     function(writableFileEntry) {
+                if (!writableFileEntry) {
+                    return;
+                }
                 writableFileEntry.createWriter(function(writer) {
                     fileEntry.file(function(file) {
                         writer.write(file);
@@ -105,8 +109,11 @@ function drop(event) {
 
 function open() {
     chrome.fileSystem.chooseEntry(function(entry) {
+        if (!entry) {
+            return;
+        }
         entry.file(function(file) {
-          sync(file);
+            sync(file);
         });
     });
 }
